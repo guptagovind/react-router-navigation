@@ -1,10 +1,10 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from '../components/Header';
-import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
-import AddExpensePage from '../components/AddExpensePage';
-import EditExpensePage from '../components/EditExpensePage';
-import HelpPage from '../components/HelpPage';
+import Home from '../components/Home';
+import Portfolio from '../components/Portfolio';
+import PortFolioId from '../components/PortfolioId'
+import Contact from '../components/Contact';
 import NotFoundPage from '../components/NotFoundPage';
 
 
@@ -17,10 +17,11 @@ const AppRouter = () => (
     <div>
       <Header/>
       <Switch>
-        <Route path="/" component={ExpenseDashboardPage} exact={true}/>
-        <Route path="/create"  component={AddExpensePage}/>
-        <Route path="/edit/:id"  component={EditExpensePage}/>
-        <Route path="/help"  component={HelpPage}/>
+        {/*<Route path="/"  exact={true}/>*/}
+        <Route path="/" component={Home}  exact={true}/>
+        <Route path="/portfolio" component={Portfolio} exact={true}/>
+        <Route path="/portfolio/:id" component={PortFolioId}/>
+        <Route path="/contact" component={Contact}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>
